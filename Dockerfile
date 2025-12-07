@@ -25,8 +25,8 @@ WORKDIR /app
 RUN addgroup -S spring && adduser -S spring -G spring
 USER spring:spring
 
-# Copy the JAR file
-COPY --chown=spring:spring target/*.jar app.jar
+# Copy the JAR file from build stage
+COPY --from=build --chown=spring:spring /app/target/*.jar app.jar
 
 # Expose application port
 EXPOSE 8080
