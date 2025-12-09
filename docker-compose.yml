@@ -17,6 +17,16 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+  ba-api:
+    container_name: ba-api
+    image: ba/ba:1.0.0
+    ports:
+        - "8080:8080"
+    networks:
+        - budget-network
+    depends_on:
+      - postgres
+
 
 volumes:
   postgres_data:
