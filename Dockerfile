@@ -7,6 +7,9 @@ WORKDIR /build
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
 
+# This line is required to fix the permission error
+RUN chmod +x ./mvnw
+
 # Download dependencies (cached layer)
 RUN ./mvnw dependency:go-offline
 
