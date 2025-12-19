@@ -34,6 +34,7 @@ build/
 
 # Environment variables file
 .env
+.env.*
 
 # Local application properties
 src/main/resources/application-local.properties
