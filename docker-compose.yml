@@ -20,6 +20,9 @@ services:
       timeout: 5s
       retries: 5
   ba-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: ba-api
     image: ba/ba:1.0.0
     env_file:
