@@ -35,9 +35,6 @@ EXPOSE 8080
 
 ENV DB_URL=jdbc:postgresql://budget-app-postgres:5432/budgetapp
 ENV JAR_VERSION=${APP_VERSION}
-ENV EMAIL_HOSTNAME=missing_hostname
-ENV EMAIL_USERNAME=missing_username
-ENV EMAIL_PASSWORD=missing_password
 
 # Run application
 CMD java -jar -Dspring.datasource.url=${DB_URL} BudgetApp-${JAR_VERSION}.jar
